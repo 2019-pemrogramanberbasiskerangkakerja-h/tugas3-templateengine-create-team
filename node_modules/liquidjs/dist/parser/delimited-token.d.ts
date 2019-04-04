@@ -1,0 +1,4 @@
+import Token from './token';
+export default class DelimitedToken extends Token {
+    constructor(raw: string, value: string, input: string, line: number, pos: number, trimLeft: boolean, trimRight: boolean, file?: string);
+}

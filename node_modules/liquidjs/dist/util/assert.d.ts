@@ -1,0 +1,1 @@
+export default function <T>(predicate: T | null | undefined, message?: string): void;

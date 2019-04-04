@@ -1,0 +1,6 @@
+There are {{ users | size }} users <br><br><p>
+
+{% for user in users -%}
+{{ user.name }} is {{ user.age }} years old <br>
+{% endfor -%}
+
