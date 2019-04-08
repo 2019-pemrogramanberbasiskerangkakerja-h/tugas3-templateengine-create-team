@@ -2,14 +2,22 @@
 
 ## DEMO
 
-* Cara run:
+* How to run:
 ```bash
 node index.js
 ```
 
-* buka link:
+* Run Localhost:
 ```bash
 localhost:3000
+```
+
+* What time is it:
+```bash
 localhost:3000/today
+```
+
+* Active Users:
+```bash
 localhost:3000/name
 ```
