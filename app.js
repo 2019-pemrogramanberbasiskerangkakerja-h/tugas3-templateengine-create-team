@@ -12,29 +12,35 @@ app.set('views', ['./views']) // specify the views directory
 app.set('view engine', 'liquid') // set to default
 
 app.get('/', function (req, res) {
-  	const todos = ['fork and clone', 'make it better', 'make a pull request', 'looping']
+  	const todos = ['Fork and clone', 'Make it better', 'Make a pull request', 'Looping']
   	res.render('todolist', {
     	todos: todos,
-    	title: 'Welcome to liquidjs!'
+    	title: 'Welcome!'
   	})
 })
 
 app.get("/today", (req, res) => {
 
     let today = new Date();
-    res.render("show_date", {now: today});
-    res.render("derived", { content: 'Some content' });
-});
+    res.render("show_date", {
+      now: today,
+      title: 'Today!'
+    })
+    // res.render("derived", { content: 'Some content' })
+})
 
-app.get("/name", (req, res) => {
+app.get('/name', (req, res) => {
 
-    ctx = { users: [{ name: "Ivan", age: 22 }, { name: "Joshua", age: 21 }] };
-    res.render("users", ctx);
-});
+    users = [{ name: 'Ivan Agung', age: 22 }, { name: 'Joshua Resamuel', age: 21 }]
+    res.render('users', {
+      users: users,
+      title: 'Active Users!'
+    })
+})
 
 app.use((req, res) => {
-    res.statusCode = 404;
-    res.end("404 - page not found");
-});
+    res.statusCode = 404
+    res.end("404 - page not found")
+})
 
 module.exports = app
